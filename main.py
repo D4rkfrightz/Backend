@@ -17,7 +17,7 @@ result = []
 async def create_item(item: Item):
     global result
     result.append(item.__dict__)
-    return {"message":"successfully Data inserted"}
+    return {"message":"Data successfully inserted"}
 
 
 @app.get("/items/")
