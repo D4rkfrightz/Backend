@@ -17,7 +17,7 @@ result = []
 async def create_item(item: Item):
     global result
     result.append(item.__dict__)
-    return {"message":"successfully Data insert"}
+    return {"message":"successfully Data inserted"}
 
 
 @app.get("/items/")
@@ -32,7 +32,7 @@ async def delete_item(ItemNumber: int):
     for item in result:
         if (item['ItemNumber'] == ItemNumber):
             result.remove(item)
-    return {"message":"successfully Data Deleted"}
+    return {"message":"Data successfully deleted"}
 
 
 @app.patch("/item/")
@@ -41,4 +41,4 @@ async def update_item(saad: Item):
     for item in range(0,len(result)):
         if (result[item]['ItemNumber'] == saad.__dict__['ItemNumber']):
             result[item] = saad.__dict__
-    return {"message":"successfully Data updated"}
+    return {"message":"Data successfully updated"}
